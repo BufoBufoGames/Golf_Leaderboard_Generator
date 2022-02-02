@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" translate="no">
+	<head>
+		<title>Golf Leaderboard Generator</title>
+		<meta name="Author" content="Nathan Dobby - 2022">
+		<meta charset="utf-8">
+		<meta name="google" content="notranslate">
+		<style>
+			body {
+				margin: auto;
+				border: 0;
+				background-color: DarkGrey;
+				text-align: center;
+				justify-content: center;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 14px;
+			}
+			h1 {
+				text-align: center;
+				font-size: 32px;
+			}
+			textarea {
+				resize: none;
+			}
+			#footer {
+				margin: auto;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+		</style>
+		<script type="text/javascript" src="Golf_Leaderboard_Generator.js"></script>
+	</head>
+
+	<body>
+		<h1>Golf Leaderboard Generator</h1>
+		<textarea id="leaderboardDataText" name="leaderboardDataText" rows="32" cols="128" spellcheck="false" placeholder="Leaderboard Data&#10-----------------------&#10Enter the list of names and scores to display here, in the format 'Name score1 score2 ...score18'. Put each player on a new line.&#10e.g.&#10GILMORE 2 0 -1 -2 -4 -5 -6 -8 -10&#10WEBB 0 -1 -1 -2 -2 -1 -2 -4 -5&#10NIELSEN 0 1 2 3 2 1 0 -1 -2 -3"></textarea>
+		<br/>
+		<br/>
+		<br/>
+		<input id="generate" type="submit" value="Generate Image"/>
+		<br/>
+		<br/>
+		<br/>
+		<canvas id="previewCanvas" width="612" height="408" style="display:block;margin:auto;border:1px dashed black;"></canvas>
+		<br/>
+		<br/>
+		<input id="download" type="submit" value="Download Image"/>
+		<div id="footer">
+			<a href="https://bufobufogames.itch.io/"><img src="docs/toad_logo_cga.png" alt="BufoBufo Logo" width="64" height="64"><a/>
+			<p>2022 - <a href="https://bufobufogames.itch.io/">BufoBufo<a/></p>
+		</div>
+	</body>
+</html>
