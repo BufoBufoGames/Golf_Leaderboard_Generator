@@ -30,6 +30,8 @@ const leaderboardPositions =  [ [ [54, 150], [172, 132], [194, 132], [217, 131],
 								[ [54, 350], [171, 333], [194, 333], [217, 333], [240, 333], [263, 333], [286, 333], [309, 333], [332, 333], [356, 333], [383, 333], [407, 333], [430, 333], [454, 333], [477, 333], [501, 333], [524, 332], [548, 332], [572, 332] ],
 								[ [53, 375], [172, 358], [194, 359], [217, 359], [240, 359], [263, 359], [286, 359], [309, 359], [332, 359], [356, 359], [383, 359], [407, 359], [430, 359], [454, 359], [477, 359], [501, 359], [524, 358], [548, 358], [572, 358] ] ];
 
+const defaultPlayerData = "GILMORE 2 0 -1 -2 -4 -5 -6 -8 -10\nWEBB 0 -1 -1 -2 -2 -1 -2 -4 -5\nNIELSEN 0 1 2 3 2 1 0 -1 -2";
+
 const backgroundURL = "leaderboard_template.png";
 const tilesetURL = "number_tiles.png";
 
@@ -159,6 +161,12 @@ function generateLeaderboard()
 	
 	// Grab the player data
 	var playerArray = leaderboardDataText.value.split(/\r\n|\r|\n/);
+	
+	// Defaults for testing / display
+	if (leaderboardDataText.value == "")
+	{
+		playerArray = defaultPlayerData.split(/\r\n|\r|\n/);
+	}
 	
 	let numPlayers = Math.min(maxPlayers, playerArray.length);
 	
