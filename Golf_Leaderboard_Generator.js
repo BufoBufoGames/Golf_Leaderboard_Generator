@@ -37,8 +37,9 @@ const tilesetURL = "number_tiles.png";
 
 const tileWidth = 12;
 const tileHeight = 20;
+const maxScore = 20;
 const maxPlayers = 10;
-const maxData = 11;
+const maxData = 19;
 
 // Load callbacks
 window.onload = pageLoadedCallback;
@@ -169,6 +170,7 @@ function generateLeaderboard()
 	}
 	
 	let numPlayers = Math.min(maxPlayers, playerArray.length);
+	let maxTileOffset = (maxScore * tileWidth);
 	
 	for (let player = 0; player < numPlayers; player++)
 	{
@@ -189,12 +191,12 @@ function generateLeaderboard()
 				
 				if (score >= 0)
 				{
-					xOff = Math.min((score * tileWidth), 108);
+					xOff = Math.min((score * tileWidth), maxTileOffset);
 					yOff = 0;
 				}
 				else
 				{
-					xOff = Math.min((((score * -1) - 1) * tileWidth), 108);
+					xOff = Math.min(((score * -1) * tileWidth), maxTileOffset);
 					yOff = tileHeight;
 				}
 				
